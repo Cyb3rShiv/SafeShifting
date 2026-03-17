@@ -181,8 +181,8 @@
                             <div class="offcanvas__contact-text">
                                 <i class="bi bi-geo-alt-fill"></i>
                                 <address class="list_item_text">
-                                    Plot No.396, Bharthal Village Near - Hanuman Mandir, Dwarka Sector - 26, New Delhi -
-                                    110077
+                                   House No.- 105 , Shop No.-5, First Floor, Harola, Sector-5,Near Baba Arcade Market, Noida, Uttar Pradesh
+201301 
                                 </address>
                             </div>
                         </div>
@@ -580,98 +580,14 @@
             }
         </style>
         <main>
-            <!-- Modal -->
-            <div class="modal fade" id="qteModal" tabindex="-1" aria-labelledby="qteModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-md modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Header -->
-                        <div class="modal-header text-white" style="background-color: #c70016;">
-                            <h5 class="modal-title text-white" id="qteModalLabel">Please keep us updated on your move.
-                            </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                                aria-label="Close" onclick="setClose()"></button>
-                        </div>
+            <div id="forum"></div>
 
-                        <!-- Body -->
-                        <div class="modal-body">
-                            <form method="post" id="qteform8" onsubmit="return false">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="form-label mt-1 mb-1">Name *</label>
-                                        <input type="text" name="name" class="form-control" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="form-label mt-1 mb-1">Mobile *</label>
-                                        <input type="tel" name="phone" class="form-control" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="form-label mt-1 mb-1 mt-1 mb-1">Moving From *</label>
-                                        <input type="text" name="mfrom" id="mfromqt" value=" " class="form-control"
-                                            required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="form-label mt-1 mb-1">Moving To *</label>
-                                        <input type="text" name="mto" class="form-control" required>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="form-label mt-1 mb-1">Query *</label>
-                                        <textarea name="message" class="form-control" rows="4" required></textarea>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div id="resultqt8" class="mb-2 text-danger"></div>
-                                        <div class="d-flex gap-2">
-                                            <button type="submit" id="submitbtnqt8" class="btn"
-                                                style="background-color: #c70016; color:#ffffff">Submit Request</button>
-                                            <button type="reset" class="btn btn-outline-secondary"
-                                                onclick="$('#resultqt8').html('');">Clear</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <script type="text/javascript">
-               $(function () {
-  $('#submitbtnqt8').click(function () {
-
-    $.ajax({
-      type: "POST",
-      url: "https://script.google.com/macros/s/AKfycbwR8A9BrFIUxkXCwIEbBNAg-zvPyIZmV8IfQr_T5hEGJmrS18QwbiFY6JFISyBrHJge/exec",
-      contentType: "application/json",
-      data: JSON.stringify({
-        name: $("input[name=name]").val(),
-        phone: $("input[name=phone]").val(),
-        mfrom: $("input[name=mfrom]").val(),
-        mto: $("input[name=mto]").val(),
-        message: $("textarea[name=message]").val()
-      }),
-
-      beforeSend: function () {
-        $('#resultqt8').html('<p style="color:red">Please wait...</p>');
-      },
-
-      success: function (data) {
-        $('#resultqt8').html("<div class='alert alert-success'>Submitted successfully!</div>");
-        $("#qteform8").trigger('reset');
-      },
-
-      error: function () {
-        $('#resultqt8').html("<div class='alert alert-danger'>Something went wrong!</div>");
-      }
-
-    });
-
-  });
-});
+            <script>
+            fetch("forum.html")
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById("forum").innerHTML = data;
+            });
             </script>
             <script>
                 window.onload = function () {
@@ -893,6 +809,132 @@
                         </style>
                     </div>
                 </div>
+                <section class="why-choose-highlight">
+                    <div class="container">
+                        <div class="why-choose-wrap">
+                            <h2>Why Choose Safe Shifting Packers &amp; Movers?</h2>
+
+                            <div class="why-item">
+                                <div class="why-icon"><i class="bi bi-people"></i></div>
+                                <div class="why-content">
+                                    <h4>Experienced Professional Team</h4>
+                                    <p>Our trained professionals have years of experience in handling all types of relocations with care and precision.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-item">
+                                <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+                                <div class="why-content">
+                                    <h4>High-Quality Packing Materials</h4>
+                                    <p>We use premium packing materials including bubble wrap, cartons, and thermocol for maximum protection.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-item">
+                                <div class="why-icon"><i class="bi bi-truck"></i></div>
+                                <div class="why-content">
+                                    <h4>Door-to-Door Safe Delivery</h4>
+                                    <p>Complete end-to-end service ensuring your belongings reach safely from pickup to delivery.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-item">
+                                <div class="why-icon"><i class="bi bi-geo-alt"></i></div>
+                                <div class="why-content">
+                                    <h4>Trusted Across India</h4>
+                                    <p>Serving Delhi NCR, Noida, Ghaziabad and providing pan-India shifting services with reliability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <style>
+                    .why-choose-highlight {
+                        padding: 30px 0 10px;
+                    }
+
+                    .why-choose-wrap {
+                        position: relative;
+                        overflow: hidden;
+                        background: #ffffff;
+                        border: 1px solid #e3eaf5;
+                        border-radius: 8px;
+                        padding: 26px 20px;
+                        color: #4f5d75;
+                        box-shadow: 0 10px 24px rgba(15, 43, 70, 0.08);
+                    }
+
+                    .why-choose-wrap::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: #f38321;
+                    }
+
+                    .why-choose-wrap h2 {
+                        color: #0f2b46;
+                        font-size: 34px;
+                        line-height: 1.15;
+                        margin-bottom: 24px;
+                    }
+
+                    .why-item {
+                        display: flex;
+                        gap: 16px;
+                        align-items: flex-start;
+                        margin-bottom: 18px;
+                    }
+
+                    .why-item:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .why-icon {
+                        width: 56px;
+                        height: 56px;
+                        min-width: 56px;
+                        border-radius: 50%;
+                        background: #fff2e6;
+                        border: 1px solid #ffd9b5;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #f38321;
+                        font-size: 24px;
+                    }
+
+                    .why-content h4 {
+                        color: #0f2b46;
+                        margin: 2px 0 4px;
+                        font-size: 22px;
+                        line-height: 1.25;
+                    }
+
+                    .why-content p {
+                        margin: 0;
+                        color: #58677f;
+                        font-size: 17px;
+                    }
+
+                    @media (max-width: 767px) {
+                        .why-choose-wrap h2 {
+                            font-size: 26px;
+                        }
+
+                        .why-content h4 {
+                            font-size: 17px;
+                        }
+
+                        .why-content p {
+                            font-size: 14px;
+                        }
+                    }
+                </style>
+
                 <section class="services section-bg" id="services">
                     <div class="container">
                         <header class="section-header">
@@ -923,7 +965,7 @@
                                         unloading goods</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4">
+                            <!-- <div class="col-md-6 col-lg-4">
                                 <div class="box">
                                     <div class="icon">
                                         <img src="assets/images/home/carloading.png" alt="Paradox Shape">
@@ -931,7 +973,7 @@
                                      <p>Safe Shifting Packers and Movers - Delhi in India renders well organized car
                                         moving services</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="box">
                                     <div class="icon">
@@ -951,7 +993,7 @@
                                     <div class="icon">
                                         <img src="assets/images/home/local.png" alt="Paradox Shape">
                                     </div>
-                                    <h4 class="title"><a href="local-service-in-delhi.html">Local Shifting</a></h4>
+                                    <h4 class="title"><a href="local-services-in-delhi.html">Local Shifting</a></h4>
                                     <p>
                                         Our clients can avail from Safe Shifting Packers and Movers - Delhi a broadrange
                                         of Local</p>
@@ -3582,98 +3624,7 @@
                         }
                     </style>
                 </div>
-        </main><!-- Modal -->
-        <div class="modal fade" id="qteModal" tabindex="-1" aria-labelledby="qteModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-header text-white" style="background-color: #c70016;">
-                        <h5 class="modal-title text-white" id="qteModalLabel">Please keep us updated on your move.</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close" onclick="setClose()"></button>
-                    </div>
-
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <form method="post" id="qteform8" onsubmit="return false">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="form-label mt-1 mb-1">Name *</label>
-                                    <input type="text" name="name" class="form-control" required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label mt-1 mb-1">Mobile *</label>
-                                    <input type="tel" name="phone" class="form-control" required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label mt-1 mb-1 mt-1 mb-1">Moving From *</label>
-                                    <input type="text" name="mfrom" id="mfromqt" value=" " class="form-control"
-                                        required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label mt-1 mb-1">Moving To *</label>
-                                    <input type="text" name="mto" class="form-control" required>
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="form-label mt-1 mb-1">Query *</label>
-                                    <textarea name="message" class="form-control" rows="4" required></textarea>
-                                </div>
-
-                                <div class="col-12">
-                                    <div id="resultqt8" class="mb-2 text-danger"></div>
-                                    <div class="d-flex gap-2">
-                                        <button type="submit" id="submitbtnqt8" class="btn"
-                                            style="background-color: #c70016; color:#ffffff">Submit Request</button>
-                                        <button type="reset" class="btn btn-outline-secondary"
-                                            onclick="$('#resultqt8').html('');">Clear</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <script type="text/javascript">
-                $(function () {
-  $('#submitbtnqt8').click(function () {
-
-    $.ajax({
-      type: "POST",
-      url: "https://script.google.com/macros/s/AKfycbwR8A9BrFIUxkXCwIEbBNAg-zvPyIZmV8IfQr_T5hEGJmrS18QwbiFY6JFISyBrHJge/exec",
-      contentType: "application/json",
-      data: JSON.stringify({
-        name: $("input[name=name]").val(),
-        phone: $("input[name=phone]").val(),
-        mfrom: $("input[name=mfrom]").val(),
-        mto: $("input[name=mto]").val(),
-        message: $("textarea[name=message]").val()
-      }),
-
-      beforeSend: function () {
-        $('#resultqt8').html('<p style="color:red">Please wait...</p>');
-      },
-
-      success: function (data) {
-        $('#resultqt8').html("<div class='alert alert-success'>Submitted successfully!</div>");
-        $("#qteform8").trigger('reset');
-      },
-
-      error: function () {
-        $('#resultqt8').html("<div class='alert alert-danger'>Something went wrong!</div>");
-      }
-
-    });
-
-  });
-});
-            </script>
+        </main>
         <div id="footer"></div>
 
 <script>

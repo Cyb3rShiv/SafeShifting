@@ -46,7 +46,18 @@
         fetch("nav.html")
         .then(response => response.text())
         .then(data => {
-          document.getElementById("navbar").innerHTML = data;
+          const navbar = document.getElementById("navbar");
+          if (!navbar) {
+            return;
+          }
+
+          navbar.innerHTML = data;
+
+          if (window.initializeDynamicNav) {
+            window.initializeDynamicNav();
+          } else {
+            window.__pendingDynamicNavInit = true;
+          }
         });
         </script>
 
@@ -327,7 +338,8 @@
 					<div class="offcanvas__contact-text">
 						<i class="bi bi-geo-alt-fill"></i>
 						<address class="list_item_text">
-							Plot No.396, Bharthal Village Near - Hanuman Mandir, Dwarka Sector - 26, New Delhi - 110077
+						House No.- 105 , Shop No.-5, First Floor, Harola, Sector-5,Near Baba Arcade Market, Noida, Uttar Pradesh
+201301 
 						</address>
 					</div>
 				</div>
@@ -445,7 +457,7 @@
 
 
 
-
+<!-- 
     <div class="row">
 
       <div class="col-12 col-lg-6">
@@ -492,7 +504,7 @@
 
         </div>
 
-      </div>
+      </div> -->
 
       <div class="col col-lg-6">
 
@@ -530,21 +542,7 @@
 
           </li>
 
-          <!-- <li>
-
-            <strong>Phone:</strong>
-
-            <a style="font-weight:bold;" href="tel:+918527695003">
-
-              <i class="fas fa-phone" aria-hidden="true"></i>
-
-              <span>8527695003 </span>
-
-            </a>
-
-
-
-          </li> -->
+      
 
           <li>
 
@@ -616,7 +614,8 @@
 
       <div class="map">
 
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112155.9554671641!2d76.8934090972656!3d28.543518500000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b5e5f9bcd45%3A0xda0a153595db2438!2sDeluxe%20Cargo%20Packers%20And%20Movers!5e0!3m2!1sen!2sin!4v1718011572070!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe   src="https://www.google.com/maps?q=House%20No-105%2C%20Shop%20No%20-5%2C%20First%20Floor%2C%20Harola%2C%20Sector-5%2C%20Near%20Baba%20Arcade%20Market%2C%20Noida%2C%20Uttar%20Pradesh%20201301&output=embed"
+ width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
 
@@ -679,83 +678,15 @@
 }
 
 </style></main><!-- Modal -->
-<div class="modal fade" id="qteModal" tabindex="-1" aria-labelledby="qteModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-md modal-dialog-centered">
-		<div class="modal-content">
-			<!-- Header -->
-			<div class="modal-header text-white" style="background-color: #c70016;">
-				<h5 class="modal-title text-white" id="qteModalLabel">Please keep us updated on your move.</h5>
-				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
-					onclick="setClose()"></button>
-			</div>
+</style></main><!-- Modal -->
+       <div id="forum"></div>
 
-			<!-- Body -->
-			<div class="modal-body">
-				<form method="post" id="qteform8" onsubmit="return false">
-					<div class="row">
-						<div class="col-md-6">
-							<label class="form-label mt-1 mb-1">Name *</label>
-							<input type="text" name="name" class="form-control" required>
-						</div>
-
-						<div class="col-md-6">
-							<label class="form-label mt-1 mb-1">Mobile *</label>
-							<input type="tel" name="phone" class="form-control" required>
-						</div>
-
-						<div class="col-md-6">
-							<label class="form-label mt-1 mb-1 mt-1 mb-1">Moving From *</label>
-							<input type="text" name="mfrom" id="mfromqt" value=" "
-								class="form-control" required>
-						</div>
-
-						<div class="col-md-6">
-							<label class="form-label mt-1 mb-1">Moving To *</label>
-							<input type="text" name="mto" class="form-control" required>
-						</div>
-
-						<div class="col-12">
-							<label class="form-label mt-1 mb-1">Query *</label>
-							<textarea name="message" class="form-control" rows="4" required></textarea>
-						</div>
-
-						<div class="col-12">
-							<div id="resultqt8" class="mb-2 text-danger"></div>
-							<div class="d-flex gap-2">
-								<button type="submit" id="submitbtnqt8" class="btn" style="background-color: #c70016; color:#ffffff">Submit Request</button>
-								<button type="reset" class="btn btn-outline-secondary"
-									onclick="$('#resultqt8').html('');">Clear</button>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-	$(function () {
-		$('#submitbtnqt8').click(function () {
-			$.ajax({
-				type: "POST",
-				url: "https://safeshifting.in/contacts/booking",
-				data: $("#qteform8").serialize(),
-				beforeSend: function () {
-					$('#resultqt8').html('<p style="color:red">Please wait...</p>');
-				},
-				success: function (data) {
-					$('#resultqt8').empty();
-					if (data == '1') {
-						data = "<div class='alert alert-success'><h4>Success ! Thanks for your Enquiry.</h4></div>";
-						$("#qteform8").trigger('reset');
-					}
-					$('#resultqt8').html(data);
-				}
-			});
-		});
-	});
+<script>
+fetch("forum.html")
+.then(response => response.text())
+.then(data => {
+  document.getElementById("forum").innerHTML = data;
+});
 </script>
          <div id="footer"></div>
 
