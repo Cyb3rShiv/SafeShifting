@@ -1,0 +1,943 @@
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <footer class="site_footer style_4">
+            <a href="tel:6299509860" class="call-float" target="_blank">
+                <i class="bi bi-telephone"></i>
+                <span>Just Call Now</span>
+            </a>
+            <a href="../api.whatsapp.com/send25cd.html?phone=+916299509860&amp;text=Hello+sir,+I+am+interested+in+one+of+your+services"
+                class="whatsapp-float" target="_blank">
+                <i class="bi bi-whatsapp"></i>
+                <span>Fast quote in 20mints.</span>
+            </a>
+
+            <style>
+                .site_link1 img {
+                    padding: 10px;
+                    width: 100%;
+                    max-width: 150%;
+                    margin-top: 3px;
+                }
+
+                .footer_logo {
+                    border: none;
+                    width: 70%;
+                    height: auto;
+                    user-select: none;
+                    vertical-align: middle;
+                }
+
+                .fw-link ul li {
+                    position: relative;
+                    transition: transform 0.3s ease;
+                }
+
+                .fw-link ul li:hover {
+                    transform: translateX(10px);
+                }
+
+                .fw-link ul li a {
+                    display: block;
+                    padding: 3px 0;
+                    color: #000;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                .fw-link ul li a:hover {
+                    color: #007BFF;
+                }
+
+                .fw-title {
+                    font-weight: bold;
+                    font-size: 1.2em
+                }
+
+                .footer-content p {
+                    margin-bottom: 0;
+                    line-height: 1.7;
+                }
+
+                .footer-city-list a {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                .footer-city-list div {
+                    padding: 1px
+                }
+
+                .img-fluid1 {
+                    height: 70px;
+                    width: 62px;
+                }
+
+                @media (min-width:375px) and (max-width:992px) {
+                    .footer-city-list a {
+                        font-size: 12px;
+                        color: #3f3838;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .footer-btn {
+                        display: flex !important;
+                        flex-wrap: wrap !important;
+                        justify-content: center !important;
+                        padding-bottom: 20px;
+                    }
+
+                    .fw-title .title {
+                        padding-right: 10px;
+                    }
+
+                    /*  .fw-link ul li a {
+                margin-bottom: 10px;
+            } */
+
+                    .footer_widget {
+                        align-items: baseline;
+                        padding-right: 10px;
+                    }
+
+                    .site_footer p {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                address {
+                    display: inline;
+                }
+
+                .footer_widget .bi {
+                    color: #2c62b3
+                }
+
+                .feedback {
+                    position: fixed;
+                    top: 50%;
+                    right: -60px;
+                    transform: translateY(-50%);
+                    transform: rotateZ(270deg);
+                    height: 40px;
+                    width: 150px;
+                    background-color: #fe0101;
+                    color: #fff;
+                    z-index: 999;
+                    display: grid;
+                    place-items: center;
+                    font-size: large;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                }
+
+                .whatsapp-float {
+                    position: fixed;
+                    bottom: 13px;
+                    right: 20px;
+                    background-color: #095e54;
+                    color: white;
+                    border-radius: 50px;
+                    padding: 10px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                    transition: background-color 0.3s, box-shadow 0.3s;
+                    animation: bounce 2s infinite;
+                    z-index: 1;
+                }
+
+                .whatsapp-float:hover {
+                    background-color: #22bb55;
+                    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+                }
+
+                .whatsapp-float i {
+                    margin-right: 10px;
+                    font-size: 24px;
+                }
+
+                .whatsapp-float span {
+                    font-size: 15px;
+                }
+
+                .call-float {
+                    position: fixed;
+                    bottom: 80px;
+                    right: 20px;
+                    background-color: #28a745;
+                    color: white;
+                    border-radius: 50px;
+                    padding: 10px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                    transition: background-color 0.3s, box-shadow 0.3s;
+                    animation: bounce 2s infinite;
+                    z-index: 1;
+                }
+
+                .call-float:hover {
+                    background-color: #218838;
+                    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+                }
+
+                .call-float i {
+                    margin-right: 10px;
+                    font-size: 24px;
+                }
+
+                .call-float span {
+                    font-size: 15px;
+                }
+
+                @import url("../fonts.googleapis.com/css7b4f.css?family=Roboto");
+
+                @-webkit-keyframes come-in {
+                    0% {
+                        -webkit-transform: translatey(100px);
+                        transform: translatey(100px);
+                        opacity: 0;
+                    }
+
+                    30% {
+                        -webkit-transform: translateX(-50px) scale(0.4);
+                        transform: translateX(-50px) scale(0.4);
+                    }
+
+                    70% {
+                        -webkit-transform: translateX(0px) scale(1.2);
+                        transform: translateX(0px) scale(1.2);
+                    }
+
+                    100% {
+                        -webkit-transform: translatey(0px) scale(1);
+                        transform: translatey(0px) scale(1);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes come-in {
+                    0% {
+                        -webkit-transform: translatey(100px);
+                        transform: translatey(100px);
+                        opacity: 0;
+                    }
+
+                    30% {
+                        -webkit-transform: translateX(-50px) scale(0.4);
+                        transform: translateX(-50px) scale(0.4);
+                    }
+
+                    70% {
+                        -webkit-transform: translateX(0px) scale(1.2);
+                        transform: translateX(0px) scale(1.2);
+                    }
+
+                    100% {
+                        -webkit-transform: translatey(0px) scale(1);
+                        transform: translatey(0px) scale(1);
+                        opacity: 1;
+                    }
+                }
+
+                .my-float {
+                    margin-top: 16px;
+                }
+
+                .float:hover {
+                    -webkit-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                    -webkit-transition: transform 0.5s;
+                    -moz-transition: transform 0.5s;
+                    -o-transition: transform 0.5s;
+                    transition: transform 0.5s;
+                }
+
+                .float-container {
+                    position: fixed;
+                    bottom: 40px;
+                    left: 110px;
+                    display: flex;
+                    align-items: center;
+                    z-index: 100;
+                }
+
+                .float {
+                    width: 60px;
+                    height: 60px;
+                    background-color: #25d366 !important;
+                    color: #FFF;
+                    border-radius: 50px;
+                    text-align: center;
+                    font-size: 30px;
+                    box-shadow: 2px 2px 3px #999;
+                }
+
+                .online-status {
+                    background-color: #075E54;
+                    padding: 7px;
+                    color: #FFF;
+                    border-radius: 5px;
+                    font-size: 17px;
+                }
+
+                .my-float {
+                    margin-top: 16px;
+                }
+
+                @keyframes bounce {
+
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+
+                .floating-container {
+                    position: fixed;
+                    width: 100px;
+                    height: 100px;
+                    bottom: 0;
+                    right: 0;
+                    margin: 35px 25px;
+                    z-index: 9999999;
+                }
+
+                .floating-container:hover {
+                    height: 300px;
+                }
+
+                .floating-container:hover .floating-button {
+                    box-shadow: 0 10px 25px rgba(23, 21, 22, 0.25);
+                    -webkit-transform: translatey(5px);
+                    transform: translatey(5px);
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+
+                .floating-container:hover .element-container .float-element:nth-child(1) {
+                    -webkit-animation: come-in 0.4s forwards 0.2s;
+                    animation: come-in 0.4s forwards 0.2s;
+                }
+
+                .floating-container:hover .element-container .float-element:nth-child(2) {
+                    -webkit-animation: come-in 0.4s forwards 0.4s;
+                    animation: come-in 0.4s forwards 0.4s;
+                }
+
+                .floating-container:hover .element-container .float-element:nth-child(3) {
+                    -webkit-animation: come-in 0.4s forwards 0.6s;
+                    animation: come-in 0.4s forwards 0.6s;
+                }
+
+                .floating-container .floating-button {
+                    position: absolute;
+                    width: 65px;
+                    height: 65px;
+                    background-color: #cd1d1f;
+                    bottom: 0;
+                    border-radius: 50%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    color: white;
+                    line-height: 65px;
+                    text-align: center;
+                    font-size: 23px;
+                    z-index: 9999;
+                    box-shadow: 0 10px 25px -5px rgba(23, 21, 22, 0.25);
+                    cursor: pointer;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+
+                .floating-container .float-element {
+                    position: relative;
+                    display: block;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    margin: 15px auto;
+                    color: white;
+                    font-weight: 500;
+                    text-align: center;
+                    line-height: 50px;
+                    z-index: 0;
+                    opacity: 0;
+                    -webkit-transform: translateY(100px);
+                    transform: translateY(100px);
+                }
+
+                .floating-container .float-element .material-icons {
+                    vertical-align: middle;
+                    font-size: 16px;
+                }
+
+                .floating-container .float-element:nth-child(1) {
+                    background: #42A5F5;
+                    box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+                }
+
+                .floating-container .float-element:nth-child(2) {
+                    background: #ea4335;
+                    box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+                }
+
+                .floating-container .float-element:nth-child(3) {
+                    background: #25d366;
+                    box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+                }
+
+                @media only screen and (max-width: 767px) {
+                    .floating-container {
+                        display: none;
+                    }
+
+                    .float-container {
+                        display: none;
+                    }
+
+                    .whatsapp a.blantershow-chat {
+                        background: #095e54cc;
+                        color: #fff;
+                        position: fixed;
+                        display: flex;
+                        font-weight: 400;
+                        justify-content: space-between;
+                        bottom: 20px;
+                        left: 7px;
+                        font-size: 15px;
+                        padding: 11px 12px;
+                        border-radius: 30px;
+                        box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
+                        z-index: 99999999;
+                        animation: white-shadow .8s infinite, red-shadow .8s infinite;
+                    }
+
+                    .call {
+                        background: #ffae42de;
+                        color: #cb0104;
+                        position: fixed;
+                        display: flex;
+                        font-weight: 400;
+                        justify-content: space-between;
+                        bottom: 20px;
+                        right: 33px;
+                        font-size: 16px;
+                        padding: 10px 13px;
+                        border-radius: 30px;
+                        box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
+                        z-index: 99999999;
+                    }
+                }
+
+                @media only screen and (min-width: 767px) {
+                    .whatsapp {
+                        display: none;
+                    }
+
+                    .call {
+                        display: none;
+                    }
+                }
+
+                #faboverlay {
+                    z-index: 9999;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(0 0 0 / 78%);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.2s ease-in;
+                    will-change: opacity;
+                }
+
+                #faboverlay.show {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                #hamburger {
+                    z-index: 99999;
+                    position: fixed;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    bottom: 5% !important;
+                    left: 5%;
+                    background-color: #e21b22;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 10px rgba(10, 10, 10, 0.3);
+                    transition: all 0.2s ease-in-out;
+                }
+
+                @media only screen and (max-width: 667px) {
+                    #hamburger {
+                        bottom: 3% !important;
+                    }
+                }
+
+                #hamburger .icon-bar {
+                    display: block;
+                    background-color: #FFFFFF;
+                    width: 22px;
+                    height: 2px;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                #hamburger .icon-bar+.icon-bar {
+                    margin-top: 4px;
+                }
+
+                .fabnav {
+                    z-index: 99991;
+                    position: fixed;
+                    bottom: 5.5%;
+                    left: 5.5%;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: #f9f9f9;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    visibilty: hidden;
+                    opacity: 0;
+                    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.48);
+                    cursor: pointer;
+                    transition: all 0.3s ease-in;
+                }
+
+                .fabnav a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    color: #FFF;
+                    text-decoration: none;
+                }
+
+                .fabnav i {
+                    font-size: 30px;
+                    color: #FFF;
+                    border-radius: 50%;
+                    padding: 10px;
+                }
+
+                @media only screen and (max-width: 667px) {
+                    .fabnav {
+                        bottom: 11.5% !important;
+                    }
+                }
+
+                .material-icons {
+                    font-size: 32px;
+                }
+
+                #whatsapp.show {
+                    transform: translateY(-125%);
+                }
+
+                #phone.show {
+                    transform: translateY(-250%);
+                }
+
+                #share.show {
+                    transform: translateY(-375%);
+                }
+
+                #trip.show {
+                    transform: translateY(-500%);
+                }
+
+                #playstore.show {
+                    transform: translateY(-625%);
+                }
+
+                #hamburger.show {
+                    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.48);
+                }
+
+                #hamburger.show #wrapper {
+                    transition: transform 0.4s ease-in-out;
+                    transform: rotateZ(90deg);
+                }
+
+                #hamburger.show #one {
+                    transform: translateY(6px) rotateZ(45deg) scaleX(0.9);
+                }
+
+                #hamburger.show #thr {
+                    transform: translateY(-6px) rotateZ(-45deg) scaleX(0.9);
+                }
+
+                #hamburger.show #two {
+                    opacity: 0;
+                }
+
+                .fabnav.show {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .menu-toggle {
+                    position: absolute;
+                    z-index: 999;
+                    top: 0px;
+                    right: 0px;
+                }
+
+                .fiber p {
+                    text-align: left;
+                }
+
+                @media screen and (max-width: 667px) {
+                    .fiber {
+                        z-index: 99999;
+                        position: fixed;
+                        bottom: 10.5%;
+                        left: 22.5%;
+                        width: 150px;
+                        height: 48px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+
+                @media screen and (min-width: 425px) and (max-width: 600px) {
+                    .fiber {
+                        z-index: 99999;
+                        position: fixed;
+                        bottom: 5.5%;
+                        left: 20.5%;
+                        width: 150px;
+                        height: 48px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+
+                @media screen and (min-width: 601px) and (max-width: 999px) {
+                    .fiber {
+                        z-index: 99999;
+                        position: fixed;
+                        bottom: 5.5%;
+                        left: 13.5%;
+                        width: 150px;
+                        height: 48px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+
+                @media screen and (min-width: 1000px) and (max-width: 1200px) {
+                    .fiber {
+                        z-index: 99999;
+                        position: fixed;
+                        bottom: 5.5%;
+                        left: 12%;
+                        width: 150px;
+                        height: 48px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+
+                @media screen and (min-width: 1201px) {
+                    .fiber {
+                        z-index: 99999;
+                        position: fixed;
+                        bottom: 5.5%;
+                        left: 10.5%;
+                        width: 150px;
+                        height: 48px;
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+
+                .fiber.show {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                #new.show {
+                    transform: translateY(-125%);
+                }
+
+                #new1.show {
+                    transform: translateY(-250%);
+                }
+
+                #new3.show {
+                    transform: translateY(-375%);
+                }
+
+                #new4.show {
+                    transform: translateY(-500%);
+                }
+
+                #new5.show {
+                    transform: translateY(-625%);
+                }
+            </style>
+            <div class="footer_widget_area ">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class=" col-6 col-md-6 col-lg-3">
+                            <div class="footer-widget">
+                                <div class="fw-title">
+                                    <h5 class="title">Main Menu</h5>
+                                </div>
+                                <div class="fw-link mt-3">
+                                    <ul style="list-style: none;">
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                        <li><a href="terms-and-conditions.html">Terms And Conditions</a></li>
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                                    </ul>
+                                </div>
+                                <button data-bs-target="#qteModal" data-bs-toggle="modal"
+                                    style="border-radius: 50px; color: white; font-weight: 600; background-color: #6c757d !important; margin-bottom5px;"
+                                    class="btn" data-toggle="modal" data-target="#qteModal"><i
+                                        class="far fa-paper-plane"></i>
+                                    BOOK US
+                                    <span></span></button>
+                            </div>
+                        </div>
+                        <div class=" col-6 col-md-6 col-lg-3">
+                            <div class="footer-widget">
+                                <div class="fw-title">
+                                    <h5 class="title ">Services</h5>
+                                </div>
+                                <div class="fw-link mt-3">
+                                    <ul style="list-style: none;">
+                                        <li><a href="packing-moving-services-in-delhi.html">Packing & Moving
+                                                Services</a></li>
+                                        <li><a href="loading-and-unloading-in-delhi.html">Loading and
+                                                Unloading</a></li>
+                                         <li><a href="relocation-service-in-delhi.html">Relocation Services</a>
+                                        </li>
+                                        <li><a href="local-service-in-delhi.html">Local Shifting Services</a></li>
+                                        <li><a href="office-shifting-in-delhi.html">Office Shifting Services</a>
+                                        </li>
+                                        <li><a href="warehousing-services-in-delhi.html">Warehouse Solutions</a>
+                                        </li>
+                                        <li><a href="insurance-services-in-delhi.html">Insurance Services</a></li>
+                                        <!-- <li><a href="reviews.html">Review and Compliment </a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer_widget">
+                                <div class="fw-title">
+                                    <h5 class="title">Contact Us</h5>
+                                </div>
+                                <div class="icon_list_widget mt-3">
+                                    <ul class="icon_list unordered_list_block">
+                                        <li>
+                                            <!-- <a href="mailto:edo
+                                                <i class="bi bi-envelope"></i>
+                                                <span class="list_item_text">
+                                                    <span> edospan>
+                                                </span>
+                                            </a> -->
+                                            <a href="mailto:info@safeshifting.in">
+                                                <i class="bi bi-envelope"></i>
+                                                <span class="list_item_text">
+                                                    <span> info@safeshifting.in</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a style="font-weight:bold;" href="tel:+916299509860">
+                                                <i class="bi bi-telephone"></i>
+                                                <span>6299509860</span>
+                                            </a> <br>
+                                            <!-- <a style="font-weight:bold;" href="tel:+9193500 80070">
+                                                <i class="bi bi-telephone"></i>
+                                                <span>93500 80070</span>
+                                            </a><br>
+                                            <a style="font-weight:bold;" href="tel:+9193500 80071">
+                                                <i class="bi bi-telephone"></i>
+                                                <span>93500 80071</span>
+                                            </a> -->
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <address class="list_item_text">
+                                                <span>Safe Shifting Packers and Movers Pvt. Ltd.</span><br>
+                                                <span>house No.- 105 , Shop No.-5, First Floor, Harola, Sector-5,</span><br>
+                                                <span>Near Baba Arcade Market, Noida, Uttar Pradesh
+201301</span>
+                                            </address>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer_social">
+
+                                    <ul class="social_icon unordered_list_end">
+
+                                        <li><a href=" " target="_blank"><i
+                                                    class="bi bi-facebook"></i></a></li>
+
+                                        <li><a href=" "
+                                                target="_blank"><i class="bi bi-instagram"></i></a></li>
+
+                                        <li><a href=" " target="_blank"><i
+                                                    class="bi bi-twitter"></i></a>
+                                        </li>
+
+                                        <li><a href=" " target="_blank"><i class="bi bi-youtube"></i></a></li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 ">
+                            <div class="footer_logo">
+
+                                <a class="site_link1" href="index.html">
+
+                                    <img src="assets/images/logo/Deluxelogonew.png" loading="lazy" alt="deluxe-logo">
+                                </a>
+
+                            </div>
+
+                            <div class="footer-btn">
+                                <p class="title mt-3">Safe Shifting Packers and Movers in Delhi is a prominent shifting
+                                    company
+                                    in the country that offers the services of the packing and moving of household goods
+                                    and
+                                    personal effects throughout India.
+                                </p>
+                                <div class="col-12">
+                                    <div class="container">
+                                        <div class="row text-center">
+                                            <h5 class="title ">More Information</h5>
+                                            <div class="row">
+                                                <div class="col-3 col-sm-3 mt-2 px-3">
+                                                         <img src="assets/images/iso.png" alt="ISO Certified"
+                                                            class="img-fluid1">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-sm-3 mt-2 px-3">
+                                                         <img src="assets/images/msme.jpg" alt="Tax" class="img-fluid1">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-sm-3 mt-2 px-3">
+                                                         <img src="assets/images/start.jpg" alt="Startup"
+                                                            class="img-fluid1">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-sm-3 mt-2 px-3">
+                                                         <img src="assets/images/india.jpg" alt="MSME"
+                                                            class="img-fluid1">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div><br>
+
+                    <hr>
+
+                    <br>
+
+
+                    <!-- <div class="footer-city-list row" style="margin-top:50px;">
+                        <h5 class="text-center" style="color:#dd1d2a;">Citiwise Coverage</h5>
+
+                        <div class="col-6 col-sm-3 pt-2">
+                            <a href="mumbai-packers-movers-maharashtra.html">
+                                Packers Movers in Mumbai
+                            </a>
+                        </div>
+                    </div> -->
+
+                </div> <!-- container -->
+            </div> <!-- footer_widget_area -->
+
+            <div style="background-color:#c70016">
+                <div class="container">
+                    <div class="row align-items-center gy-3 justify-content-between">
+                        <div class="col-12 text-center">
+                            <p class="mb-1 text-white">
+                                Safe Shifting Packers and Movers © 2026. All rights reserved.
+                            </p>
+                             <p class="mb-1 text-white">
+                                
+  Made with ❤️ in India by 
+   <a href="https://shiveshsatyam.tech/"
+                                    class="text-white" target="_blank">Shivesh Satyam</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
