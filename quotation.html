@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safe Shifting Packers &amp; Movers – E-Invoice</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <!-- html2pdf CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Firebase SDK (compat v9) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     FIREBASE AUTH OVERLAY
+════════════════════════════════════════════ -->
+<div id="auth-overlay">
+  <div class="auth-card">
+    <div class="auth-logo">📦</div>
+    <div class="auth-brand">SAFE SHIFTING</div>
+    <div class="auth-sub">Packers &amp; Movers</div>
+    <div class="auth-title">Staff Login</div>
+
+    <div class="auth-field-group">
+      <label class="auth-label">Email Address</label>
+      <input type="email" id="auth-email" class="auth-input" placeholder="Enter your email" autocomplete="email"/>
+    </div>
+    <div class="auth-field-group">
+      <label class="auth-label">Password</label>
+      <input type="password" id="auth-password" class="auth-input" placeholder="Enter your password" autocomplete="current-password"/>
+    </div>
+    <div id="auth-error" class="auth-error"></div>
+    <button class="auth-btn" id="auth-login-btn" onclick="loginUser()">🔐 Login</button>
+    <div class="auth-footer">Authorized personnel only</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     TOOLBAR  (outside printable area)
+════════════════════════════════════════════ -->
+<div class="toolbar no-print" id="main-toolbar" style="display:none;">
+  <div class="toolbar-brand">📦 E-Invoice Generator</div>
+  <div class="toolbar-actions">
+    <button class="btn btn-outline" onclick="clearForm()">🗑 Clear</button>
+    <!-- <button class="btn btn-outline" onclick="loadSaved()">📂 Load Saved</button> -->
+    <button class="btn btn-outline" onclick="saveLocal()">💾 Save</button>
+    <button class="btn btn-secondary" onclick="printInvoice()">🖨 Print</button>
+    <!-- <button class="btn btn-primary" onclick="downloadPDF()">⬇ Download PDF</button> -->
+    <button class="btn btn-danger" onclick="logoutUser()">🚪 Logout</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     A4 INVOICE WRAPPER
+════════════════════════════════════════════ -->
+<div class="page-wrapper" id="invoice-root" style="display:none;">
+<div class="invoice-a4" id="invoice-content">
+
+  <!-- ─── TOP HEADER BAR ─── -->
+  <div class="inv-header">
+
+    <!-- Left: service thumbnails -->
+    <div class="thumb-strip">
+      <div class="thumb" style="background:#d4a017;">
+        <span class="thumb-icon">🏠</span><span class="thumb-lbl">House Shifting</span>
+      </div>
+      <div class="thumb" style="background:#c8901e;">
+        <span class="thumb-icon">🏢</span><span class="thumb-lbl">Office Relocation</span>
+      </div>
+      <div class="thumb" style="background:#b87c1a;">
+        <span class="thumb-icon">🚗</span><span class="thumb-lbl">Vehicle Moving</span>
+      </div>
+      <div class="thumb" style="background:#a86c14;">
+        <span class="thumb-icon">📦</span><span class="thumb-lbl">Safe Packing</span>
+      </div>
+      <div class="thumb" style="background:#946010;">
+        <span class="thumb-icon">⏰</span><span class="thumb-lbl">On-Time Move</span>
+      </div>
+    </div>
+
+    <!-- Centre: logo + company name -->
+    <div class="company-block">
+   <img src="logo.jpeg" style="max-width:100px;max-height:100px;" />
+      <div class="company-name-block">
+        <div class="co-name">SAFE SHIFTING</div>
+        <div class="co-sub">PACKERS &amp; MOVERS</div>
+        <div class="co-tagline">All Kinds of House Shifting, Office Relocation, Vehicle Moving</div>
+        <div class="co-tagline">Safe Packing · On-Time Move · Trusted Service</div>
+        <div class="co-address">Add.: House No. 105, Shop No. 5, First Floor, Harola, Sec-5, Noida (U.P.)</div>
+      </div>
+    </div>
+
+    <!-- Right: quotation meta -->
+    <div class="quotation-meta">
+      <div class="quot-badge">QUOTATION</div>
+      <div class="meta-row"><span class="meta-lbl">Customer Care No.</span></div>
+      <div class="meta-row"><span class="meta-val phone-val">Mob.: 6299509860</span></div>
+      <div class="meta-row"><span class="meta-lbl">Relocation Expert</span></div>
+      <div class="meta-row"><span class="meta-lbl">GSTIN:</span>
+        <input class="meta-input" id="gstin" value="09OYUPK3813B1ZZ" /></div>
+      <div class="meta-row udyam-row">UDYAM: UP-28-0208209</div>
+      <div class="meta-row msme-badge">MSME VERIFIED</div>
+    </div>
+
+  </div><!-- /inv-header -->
+
+  <!-- ─── QUOTATION TITLE BAR ─── -->
+  <div class="title-bar">
+    <div class="title-left">LOCAL SHIFTING QUOTATION NO.:
+      <input class="quot-no-input" id="quot-no" readonly /></div>
+    <div class="title-right">DATE:
+      <input type="date" class="date-input" id="inv-date" /></div>
+  </div>
+
+  <!-- ─── CUSTOMER DETAILS ─── -->
+  <table class="customer-table">
+    <tr>
+      <td class="cust-lbl">To</td>
+      <td><input class="cust-input" placeholder="Client / Company Name" id="c-to"/></td>
+      <td class="cust-lbl">M/S</td>
+      <td><input class="cust-input" placeholder="Firm Name" id="c-ms"/></td>
+    </tr>
+    <tr>
+      <td class="cust-lbl">Moving From</td>
+      <td><input class="cust-input" placeholder="Pickup Address" id="c-from"/></td>
+      <td class="cust-lbl">Moving To</td>
+      <td><input class="cust-input" placeholder="Destination Address" id="c-to-addr"/></td>
+    </tr>
+    <tr>
+      <td class="cust-lbl">Address</td>
+      <td colspan="3"><input class="cust-input full-w" placeholder="Full Pickup Address" id="c-address"/></td>
+    </tr>
+    <tr>
+      <td class="cust-lbl">Phone / Mobile</td>
+      <td><input class="cust-input" placeholder="10-digit mobile" id="c-phone"/></td>
+      <td class="cust-lbl move-date-lbl">📅 Moving Date</td>
+      <td class="move-date-cell"><input type="date" class="cust-input move-date-input" id="c-move-date"/></td>
+    </tr>
+    <tr>
+      <td class="cust-lbl">Item List No.</td>
+      <td colspan="3"><input class="cust-input" placeholder="Inventory / Item List No." id="c-item-no"/></td>
+    </tr>
+  </table>
+
+  <!-- ─── DEAR SIR/MADAM ─── -->
+  <div class="dear-block">
+    <strong>DEAR SIR / MADAM,</strong><br/>
+    Thank you for inviting us to quote for relocation of your personal effects. We are pleased to quote the reasonable charges given below:
+  </div>
+
+  <!-- ─── SERVICES TABLE ─── -->
+  <div class="section-heading">QUOTE FOR STORAGE WAREHOUSING / HOUSEHOLD GOODS &amp; CAR RELOCATION</div>
+  <div class="services-wrapper">
+    <table class="services-table" id="services-table">
+      <thead>
+        <tr>
+          <th class="col-sn">SN</th>
+          <th class="col-desc">SERVICE DESCRIPTION</th>
+          <th class="col-amt">AMOUNT (₹)</th>
+        </tr>
+      </thead>
+      <tbody id="services-tbody">
+        <!-- rows injected by JS -->
+      </tbody>
+    </table>
+
+    <!-- Rupee watermark -->
+    <div class="rupee-watermark">₹</div>
+  </div>
+
+  <!-- ─── ADDITIONAL CHARGES ─── -->
+  <div class="section-heading" style="margin-top:8px;">ADDITIONAL CHARGES</div>
+  <table class="add-charges-table" id="add-charges-table">
+    <tbody id="add-tbody"><!-- injected by JS --></tbody>
+  </table>
+
+  <!-- ─── TOTALS ─── -->
+  <div class="totals-wrapper">
+    <div class="totals-note">GST &amp; Insurance Amount will be charged extra</div>
+    <table class="totals-table">
+      <tr><td class="t-lbl">Subtotal</td><td class="t-val" id="subtotal">₹ 0.00</td></tr>
+      <tr>
+        <td class="t-lbl">GST %
+          <input type="number" id="gst-pct" class="gst-pct-input" value="18" min="0" max="100" oninput="recalc()"/> %
+        </td>
+        <td class="t-val" id="gst-amt">₹ 0.00</td>
+      </tr>
+      <tr class="grand-row"><td class="t-lbl grand">GRAND TOTAL</td><td class="t-val grand" id="grand-total">₹ 0.00</td></tr>
+      <tr><td class="t-lbl">Token Advance</td><td><input class="token-input" id="token-advance" placeholder="₹ Amount" oninput="recalc()"/></td></tr>
+      <tr><td class="t-lbl">Balance Due</td><td class="t-val" id="balance-due">₹ 0.00</td></tr>
+    </table>
+  </div>
+
+  <!-- ─── TERMS & CONDITIONS ─── -->
+  <div class="terms-block">
+    <div class="terms-title">GENERAL TERMS AND CONDITIONS</div>
+    <ol class="terms-list">
+      <li>The below listed articles must be dismantled &amp; assembled by client only before the date of movement: (a) Window/Split AC &amp; Fans (b) Water Purifier (RO) (c) Wall mounted cabinet (d) any company made furniture (e) wall mounted LED (f) Geyser etc.</li>
+      <li>Please note the attached/above quotation has been prepared keeping in view &amp; our standard of packing with the best packing material, as the type of packing will be fit or description, if required wooden or any special packing so it will be charged extra as per requirement.</li>
+      <li>If packing is being done by the client it must be in road worthy condition and each item should be valued properly in the inventory list.</li>
+      <li>In case of Car movement, 16 liter Petrol/Diesel must be available in the car (in case of excess fuel, it will be drained out for safety purpose). This is fuel required to run vehicle up to the ramp point and in the same way from ramp to client door (its can be up to 70+70=140km).</li>
+      <li>We will charge for the actual volume involved and therefore, if the volume is more than our estimates, we will increase our charges proportionately.</li>
+      <li>We request you to pay us 20% advance on total amount along with your Moving data confirmation by SMS or Email, and the balance amount on completion of packing/loading work by case/online before departure of your consignment.</li>
+      <li>The carrier or their agent shall be exempted from damage through accident, pilferage, fire, rain, collision any other road or river hazard or any transit risk, we therefore recommend that goods should be insured damage through accident, pilferage, fire, rain, collision any other road or river hazard or any transit risk, we damages claim for Client material.</li>
+    </ol>
+    <div class="terms-warning">⚠ Please keep your CASH / JEWELLERY / MOBILE / LAPTOP in your custody, we don't have any responsibility for these items.</div>
+  </div>
+
+  <!-- ─── FOOTER / SIGNATURES ─── -->
+  <div class="footer-block">
+    <div class="footer-col">
+      <div class="footer-label">Marketing Officer</div>
+      <input class="footer-input" id="marketing-officer" placeholder="Name"/>
+      <div class="footer-label" style="margin-top:8px;">Mobile No.</div>
+      <input class="footer-input" id="marketing-mobile" placeholder="Mobile"/>
+      <div class="footer-label" style="margin-top:10px;">For <strong>SAFE SHIFTING PACKERS &amp; MOVERS</strong></div>
+    </div>
+    <div class="footer-col center-col">
+      <div class="india-badge">🇮🇳 All India Branches</div>
+    </div>
+    <div class="footer-col sig-col">
+      <div class="sig-box">
+        <div class="sig-label">Authorized Signatory</div>
+        <div class="sig-line"></div>
+      </div>
+      <div class="sig-box" style="margin-top:10px;">
+        <div class="sig-label">Client Signature</div>
+        <div class="sig-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-note">
+    Signature is mandatory, it's just acknowledgement for receive our quotation &amp; read all terms condition. Your booking will be confirmed after making token advance.
+  </div>
+
+</div><!-- /invoice-a4 -->
+</div><!-- /page-wrapper -->
+
+<script src="script.js"></script>
+</body>
+</html>
