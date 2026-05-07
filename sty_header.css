@@ -1,0 +1,150 @@
+
+	/* Header Top Section */
+	#top-header {
+		z-index: 999;
+		position: fixed;
+		top: 0;
+		background-color: #cb0104;
+		color: white;
+		width: 100%;
+		line-height: 1;
+	}
+
+	#top-header a {
+		color: #fff;
+		padding-right: 10px;
+	}
+
+	.header-top-left-items {
+		font-size: 16px;
+		padding-left: 50px;
+	}
+
+	.header-top-left-single-item,
+	.header-top-right-single-item {
+		margin-right: 20px;
+		text-align: right;
+	}
+
+	.header-top-left-icon a,
+	.header-top-right-icon-area ul a {
+		color: #fff !important;
+		font-size: 16px;
+	}
+
+	.header-top-left-icon marquee {
+		font-size: 16px;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	.header-top-right-icon-area ul {
+		text-align: right;
+		margin-bottom: 0;
+		padding-top: 5px;
+		list-style: none;
+	}
+
+	.top-nav {
+		height: 100%;
+		align-items: center;
+	}
+
+	.top-nav ul li {
+		display: inline-block;
+	}
+
+	.top-sub-header {
+		font-size: 13px;
+		text-align: end;
+		padding-right: 38px;
+	}
+
+	/* Responsive Rules */
+	@media screen and (max-width: 1278px) {
+		#top-header {
+			display: none;
+		}
+
+		.site_header {
+			top: 0px !important;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.header_btns_group li {
+			display: none;
+		}
+
+		.site_header .container {
+			max-width: 1480px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		.site_link img {
+			padding: 0;
+			width: auto;
+		}
+	}
+
+	@media (min-width: 1278px) and (max-width: 1406px) {
+		.site_link img {
+			height: 70px;
+		}
+	}
+
+	@media only screen and (min-width: 992px) and (max-width: 1336px) {
+		[dir=rtl] .header_wrapper {
+			grid-template-columns: 15% auto 20% !important;
+			margin-top: -19px;
+		}
+	}
+
+	/* Google Translate Styles */
+	#google_translate_element .goog-te-combo {
+		height: 36px;
+		margin-top: 38px;
+	}
+
+	#google_translate_element span {
+		display: none;
+	}
+
+	.header-top-right-part ul li small {
+		font-size: smaller;
+	}
+
+	/* Offcanvas styles */
+	.offcanvas__logo img {
+		width: 150px;
+	}
+
+	.offcanvas__social ul {
+		color: #000;
+	}
+
+	.header_right {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		justify-content: end;
+		/* margin-top: 10px; */
+	}
+
+	.site_link img {
+		width: 100%;
+		/* margin-top: 3px; */
+	}
+
+	/* .main-menu ul {
+		margin: -10px 0 0;
+	} */
+
+	.bi-plus-lg {
+		color: #000;
+	}
+
+	.site_header {
+		top: 59px;
+	}

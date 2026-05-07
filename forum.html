@@ -1,0 +1,151 @@
+ <link rel="apple-touch-icon" href="assets/images/logo/logo2.png">
+    <link rel="shortcut icon" href="assets/images/logo/logo2.png">
+    <link rel="apple-touch-icon" href="assets/images/logo/logo2.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="prefetch" href="manifest.webmanifest">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style3447.css?v=1.0.5">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="sty_header.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+<style>
+    #qteModal .modal-body .form-control {
+        border: 1px solid #eea36b !important;
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    #qteModal .modal-body .form-control:focus {
+        border-color: #eea36b !important;
+        box-shadow: 0 0 0 0.2rem rgba(238, 163, 107, 0.2) !important;
+    }
+</style>
+
+<div class="modal fade" id="qteModal" tabindex="-1" aria-labelledby="qteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header text-white" style="background-color: #c70016;">
+                <h5 class="modal-title text-white" id="qteModalLabel">
+                    Please keep us updated on your move.
+                </h5>
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal" aria-label="Close" onclick="setClose()"></button>
+            </div>
+
+            <div class="modal-body">
+                <form method="post"
+                    id="qteform8"
+                    action="https://script.google.com/macros/s/AKfycbwR8A9BrFIUxkXCwIEbBNAg-zvPyIZmV8IfQr_T5hEGJmrS18QwbiFY6JFISyBrHJge/exec"
+                    target="hidden_iframe"
+                    onsubmit="submitted=true; setTimeout(function () { var modalEl = document.getElementById('qteModal'); var modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl); modalInstance.hide(); }, 300);">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label mt-1 mb-1">Name *</label>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label mt-1 mb-1">Mobile *</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label mt-1 mb-1">Moving From *</label>
+                            <input type="text" name="mfrom" id="mfromqt" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label mt-1 mb-1">Moving To *</label>
+                            <input type="text" name="mto" class="form-control" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label mt-1 mb-1">Query *</label>
+                            <textarea name="message" class="form-control" rows="4" required></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <div id="resultqt8" class="mb-2 text-danger"></div>
+
+                            <div class="d-flex gap-2">
+                                <button type="submit" id="submitbtnqt8" class="btn"
+                                    style="background-color: #c70016; color:#ffffff">
+                                    Submit Request
+                                </button>
+
+                                <button type="reset" class="btn btn-outline-secondary"
+                                    onclick="document.getElementById('resultqt8').innerHTML='';">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var submitted = false;
+
+    (function () {
+        var iframe = document.querySelector("iframe[name='hidden_iframe']");
+        if (!iframe) return;
+
+        iframe.onload = function () {
+            if (submitted) {
+                document.getElementById("resultqt8").innerHTML =
+                    "<div class='alert alert-success'><h4>Success! Data saved.</h4></div>";
+
+                document.getElementById("qteform8").reset();
+                submitted = false;
+            }
+        };
+    })();
+</script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js">
+        </script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/tilt.min.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/magnific-popup.min.js"></script>
+        <script src="assets/js/appear.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <script src="assets/js/meanmenu.min.js"></script>
+        <script src="assets/js/masonry.pkgd.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/countdown.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                rtl: false,
+                autoWidth: true,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                margin: 10,
+                nav: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        </script>
