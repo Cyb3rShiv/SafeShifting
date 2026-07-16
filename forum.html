@@ -42,7 +42,7 @@
                     id="qteform8"
                     action="https://script.google.com/macros/s/AKfycbwR8A9BrFIUxkXCwIEbBNAg-zvPyIZmV8IfQr_T5hEGJmrS18QwbiFY6JFISyBrHJge/exec"
                     target="hidden_iframe"
-                    onsubmit="submitted=true; setTimeout(function () { var modalEl = document.getElementById('qteModal'); var modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl); modalInstance.hide(); }, 300);">
+                    onsubmit="submitted=true; setTimeout(function () { var modalEl = document.getElementById('qteModal'); var modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl); modalInstance.hide(); }, 300); setTimeout(function () { window.location.href = 'thank-you.html'; }, 1200);">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -103,9 +103,6 @@
 
         iframe.onload = function () {
             if (submitted) {
-                document.getElementById("resultqt8").innerHTML =
-                    "<div class='alert alert-success'><h4>Success! Data saved.</h4></div>";
-
                 document.getElementById("qteform8").reset();
                 submitted = false;
             }

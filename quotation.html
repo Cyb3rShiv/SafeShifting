@@ -1,16 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TL4QV9VD');</script>
-<!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Safe Shifting Packers &amp; Movers – E-Invoice</title>
+  <title>Safe Shifting Packers &amp; Movers â€“ E-Invoice</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
   <!-- html2pdf CDN -->
@@ -20,17 +14,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TL4QV9VD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<!-- ═══════════════════════════════════════════
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      FIREBASE AUTH OVERLAY
-════════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div id="auth-overlay">
   <div class="auth-card">
-    <div class="auth-logo">📦</div>
+    <div class="auth-logo">ðŸ“¦</div>
     <div class="auth-brand">SAFE SHIFTING</div>
     <div class="auth-sub">Packers &amp; Movers</div>
     <div class="auth-title">Staff Login</div>
@@ -44,51 +35,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="password" id="auth-password" class="auth-input" placeholder="Enter your password" autocomplete="current-password"/>
     </div>
     <div id="auth-error" class="auth-error"></div>
-    <button class="auth-btn" id="auth-login-btn" onclick="loginUser()">🔐 Login</button>
+    <button class="auth-btn" id="auth-login-btn" onclick="loginUser()">ðŸ” Login</button>
     <div class="auth-footer">Authorized personnel only</div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      TOOLBAR  (outside printable area)
-════════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="toolbar no-print" id="main-toolbar" style="display:none;">
-  <div class="toolbar-brand">📦 E-Invoice Generator</div>
+  <div class="toolbar-brand">ðŸ“¦ E-Invoice Generator</div>
   <div class="toolbar-actions">
-    <button class="btn btn-outline" onclick="clearForm()">🗑 Clear</button>
-    <!-- <button class="btn btn-outline" onclick="loadSaved()">📂 Load Saved</button> -->
-    <button class="btn btn-outline" onclick="saveLocal()">💾 Save</button>
-    <button class="btn btn-secondary" onclick="printInvoice()">🖨 Print</button>
-    <!-- <button class="btn btn-primary" onclick="downloadPDF()">⬇ Download PDF</button> -->
-    <button class="btn btn-danger" onclick="logoutUser()">🚪 Logout</button>
+    <button class="btn btn-outline" onclick="clearForm()">ðŸ—‘ Clear</button>
+    <!-- <button class="btn btn-outline" onclick="loadSaved()">ðŸ“‚ Load Saved</button> -->
+    <button class="btn btn-outline" onclick="saveLocal()">ðŸ’¾ Save</button>
+    <button class="btn btn-secondary" onclick="printInvoice()">ðŸ–¨ Print</button>
+    <!-- <button class="btn btn-primary" onclick="downloadPDF()">â¬‡ Download PDF</button> -->
+    <button class="btn btn-danger" onclick="logoutUser()">ðŸšª Logout</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      A4 INVOICE WRAPPER
-════════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="page-wrapper" id="invoice-root" style="display:none;">
 <div class="invoice-a4" id="invoice-content">
 
-  <!-- ─── TOP HEADER BAR ─── -->
+  <!-- â”€â”€â”€ TOP HEADER BAR â”€â”€â”€ -->
   <div class="inv-header">
 
     <!-- Left: service thumbnails -->
     <div class="thumb-strip">
       <div class="thumb" style="background:#d4a017;">
-        <span class="thumb-icon">🏠</span><span class="thumb-lbl">House Shifting</span>
+        <span class="thumb-icon">ðŸ </span><span class="thumb-lbl">House Shifting</span>
       </div>
       <div class="thumb" style="background:#c8901e;">
-        <span class="thumb-icon">🏢</span><span class="thumb-lbl">Office Relocation</span>
+        <span class="thumb-icon">ðŸ¢</span><span class="thumb-lbl">Office Relocation</span>
       </div>
       <div class="thumb" style="background:#b87c1a;">
-        <span class="thumb-icon">🚗</span><span class="thumb-lbl">Vehicle Moving</span>
+        <span class="thumb-icon">ðŸš—</span><span class="thumb-lbl">Vehicle Moving</span>
       </div>
       <div class="thumb" style="background:#a86c14;">
-        <span class="thumb-icon">📦</span><span class="thumb-lbl">Safe Packing</span>
+        <span class="thumb-icon">ðŸ“¦</span><span class="thumb-lbl">Safe Packing</span>
       </div>
       <div class="thumb" style="background:#946010;">
-        <span class="thumb-icon">⏰</span><span class="thumb-lbl">On-Time Move</span>
+        <span class="thumb-icon">â°</span><span class="thumb-lbl">On-Time Move</span>
       </div>
     </div>
 
@@ -99,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="co-name">SAFE SHIFTING</div>
         <div class="co-sub">PACKERS &amp; MOVERS</div>
         <div class="co-tagline">All Kinds of House Shifting, Office Relocation, Vehicle Moving</div>
-        <div class="co-tagline">Safe Packing · On-Time Move · Trusted Service</div>
+        <div class="co-tagline">Safe Packing Â· On-Time Move Â· Trusted Service</div>
         <div class="co-address">Add.: House No. 105, Shop No. 5, First Floor, Harola, Sec-5, Noida (U.P.)</div>
       </div>
     </div>
@@ -118,7 +109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div><!-- /inv-header -->
 
-  <!-- ─── QUOTATION TITLE BAR ─── -->
+  <!-- â”€â”€â”€ QUOTATION TITLE BAR â”€â”€â”€ -->
   <div class="title-bar">
     <div class="title-left">LOCAL SHIFTING QUOTATION NO.:
       <input class="quot-no-input" id="quot-no" readonly /></div>
@@ -126,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="date" class="date-input" id="inv-date" /></div>
   </div>
 
-  <!-- ─── CUSTOMER DETAILS ─── -->
+  <!-- â”€â”€â”€ CUSTOMER DETAILS â”€â”€â”€ -->
   <table class="customer-table">
     <tr>
       <td class="cust-lbl">To</td>
@@ -147,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <tr>
       <td class="cust-lbl">Phone / Mobile</td>
       <td><input class="cust-input" placeholder="10-digit mobile" id="c-phone"/></td>
-      <td class="cust-lbl move-date-lbl">📅 Moving Date</td>
+      <td class="cust-lbl move-date-lbl">ðŸ“… Moving Date</td>
       <td class="move-date-cell"><input type="date" class="cust-input move-date-input" id="c-move-date"/></td>
     </tr>
     <tr>
@@ -156,13 +147,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </tr>
   </table>
 
-  <!-- ─── DEAR SIR/MADAM ─── -->
+  <!-- â”€â”€â”€ DEAR SIR/MADAM â”€â”€â”€ -->
   <div class="dear-block">
     <strong>DEAR SIR / MADAM,</strong><br/>
     Thank you for inviting us to quote for relocation of your personal effects. We are pleased to quote the reasonable charges given below:
   </div>
 
-  <!-- ─── SERVICES TABLE ─── -->
+  <!-- â”€â”€â”€ SERVICES TABLE â”€â”€â”€ -->
   <div class="section-heading">QUOTE FOR STORAGE WAREHOUSING / HOUSEHOLD GOODS &amp; CAR RELOCATION</div>
   <div class="services-wrapper">
     <table class="services-table" id="services-table">
@@ -170,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tr>
           <th class="col-sn">SN</th>
           <th class="col-desc">SERVICE DESCRIPTION</th>
-          <th class="col-amt">AMOUNT (₹)</th>
+          <th class="col-amt">AMOUNT (â‚¹)</th>
         </tr>
       </thead>
       <tbody id="services-tbody">
@@ -179,33 +170,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </table>
 
     <!-- Rupee watermark -->
-    <div class="rupee-watermark">₹</div>
+    <div class="rupee-watermark">â‚¹</div>
   </div>
 
-  <!-- ─── ADDITIONAL CHARGES ─── -->
+  <!-- â”€â”€â”€ ADDITIONAL CHARGES â”€â”€â”€ -->
   <div class="section-heading" style="margin-top:8px;">ADDITIONAL CHARGES</div>
   <table class="add-charges-table" id="add-charges-table">
     <tbody id="add-tbody"><!-- injected by JS --></tbody>
   </table>
 
-  <!-- ─── TOTALS ─── -->
+  <!-- â”€â”€â”€ TOTALS â”€â”€â”€ -->
   <div class="totals-wrapper">
     <div class="totals-note">GST &amp; Insurance Amount will be charged extra</div>
     <table class="totals-table">
-      <tr><td class="t-lbl">Subtotal</td><td class="t-val" id="subtotal">₹ 0.00</td></tr>
+      <tr><td class="t-lbl">Subtotal</td><td class="t-val" id="subtotal">â‚¹ 0.00</td></tr>
       <tr>
         <td class="t-lbl">GST %
           <input type="number" id="gst-pct" class="gst-pct-input" value="18" min="0" max="100" oninput="recalc()"/> %
         </td>
-        <td class="t-val" id="gst-amt">₹ 0.00</td>
+        <td class="t-val" id="gst-amt">â‚¹ 0.00</td>
       </tr>
-      <tr class="grand-row"><td class="t-lbl grand">GRAND TOTAL</td><td class="t-val grand" id="grand-total">₹ 0.00</td></tr>
-      <tr><td class="t-lbl">Token Advance</td><td><input class="token-input" id="token-advance" placeholder="₹ Amount" oninput="recalc()"/></td></tr>
-      <tr><td class="t-lbl">Balance Due</td><td class="t-val" id="balance-due">₹ 0.00</td></tr>
+      <tr class="grand-row"><td class="t-lbl grand">GRAND TOTAL</td><td class="t-val grand" id="grand-total">â‚¹ 0.00</td></tr>
+      <tr><td class="t-lbl">Token Advance</td><td><input class="token-input" id="token-advance" placeholder="â‚¹ Amount" oninput="recalc()"/></td></tr>
+      <tr><td class="t-lbl">Balance Due</td><td class="t-val" id="balance-due">â‚¹ 0.00</td></tr>
     </table>
   </div>
 
-  <!-- ─── TERMS & CONDITIONS ─── -->
+  <!-- â”€â”€â”€ TERMS & CONDITIONS â”€â”€â”€ -->
   <div class="terms-block">
     <div class="terms-title">GENERAL TERMS AND CONDITIONS</div>
     <ol class="terms-list">
@@ -217,10 +208,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li>We request you to pay us 20% advance on total amount along with your Moving data confirmation by SMS or Email, and the balance amount on completion of packing/loading work by case/online before departure of your consignment.</li>
       <li>The carrier or their agent shall be exempted from damage through accident, pilferage, fire, rain, collision any other road or river hazard or any transit risk, we therefore recommend that goods should be insured damage through accident, pilferage, fire, rain, collision any other road or river hazard or any transit risk, we damages claim for Client material.</li>
     </ol>
-    <div class="terms-warning">⚠ Please keep your CASH / JEWELLERY / MOBILE / LAPTOP in your custody, we don't have any responsibility for these items.</div>
+    <div class="terms-warning">âš  Please keep your CASH / JEWELLERY / MOBILE / LAPTOP in your custody, we don't have any responsibility for these items.</div>
   </div>
 
-  <!-- ─── FOOTER / SIGNATURES ─── -->
+  <!-- â”€â”€â”€ FOOTER / SIGNATURES â”€â”€â”€ -->
   <div class="footer-block">
     <div class="footer-col">
       <div class="footer-label">Marketing Officer</div>
@@ -230,7 +221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-label" style="margin-top:10px;">For <strong>SAFE SHIFTING PACKERS &amp; MOVERS</strong></div>
     </div>
     <div class="footer-col center-col">
-      <div class="india-badge">🇮🇳 All India Branches</div>
+      <div class="india-badge">ðŸ‡®ðŸ‡³ All India Branches</div>
     </div>
     <div class="footer-col sig-col">
       <div class="sig-box">
@@ -253,3 +244,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="script.js"></script>
 </body>
 </html>
+
